@@ -10,7 +10,7 @@ import (
 )
 
 func isRoman(x string) bool {
-	if strings.ContainsAny(x, "IVXLCDM") {
+	if strings.ContainsAny(x, "IVXLCDM") { // простая проверка на то, являются ли символы римскими цифрами
 		return true
 	}
 	return false
@@ -30,7 +30,7 @@ func fromRomanToInt(romanString string) int {
 		"IX":   9,
 		"X":    10,
 	}
-	if _, ok := romanSimbol[romanString]; ok {
+	if _, ok := romanSimbol[romanString]; ok { // сопоставление римских цифр с арабскими
 		return romanSimbol[romanString]
 	} else {
 		panic("формат математической операции не удовлетворяет заданию — " +
@@ -115,7 +115,7 @@ func deduction(str string) string {
 		num2, _ = strconv.Atoi(str2) //конвертируем строки в числа
 	}
 
-	if num1 <= 10 && num1 >= 1 && num2 <= 10 && num2 >= 1 {
+	if num1 <= 10 && num1 >= 1 && num2 <= 10 && num2 >= 1 { // проверка на соответствие условиям
 		result := num1 - num2
 		switch {
 		case isRoman(str1):
@@ -150,7 +150,7 @@ func multiplication(str string) string {
 		num2, _ = strconv.Atoi(str2) //конвертируем строки в числа
 	}
 
-	if num1 <= 10 && num1 >= 1 && num2 <= 10 && num2 >= 1 {
+	if num1 <= 10 && num1 >= 1 && num2 <= 10 && num2 >= 1 { // проверка на соответствие условиям
 		result := num1 * num2
 		switch {
 		case isRoman(str1):
@@ -186,7 +186,7 @@ func division(str string) string {
 		num2, _ = strconv.Atoi(str2) //конвертируем строки в числа
 	}
 
-	if num1 <= 10 && num1 >= 1 && num2 <= 10 && num2 >= 1 {
+	if num1 <= 10 && num1 >= 1 && num2 <= 10 && num2 >= 1 { // проверка на соответствие условиям
 		result := num1 / num2
 		switch {
 		case isRoman(str1):
