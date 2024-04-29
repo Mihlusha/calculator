@@ -187,7 +187,7 @@ func division(str string) string {
 	}
 
 	if num1 <= 10 && num1 >= 1 && num2 <= 10 && num2 >= 1 { // проверка на соответствие условиям
-		result := num1 % num2
+		result := num1 / num2
 		switch {
 		case isRoman(str1):
 			return fromIntToRoman(result)
