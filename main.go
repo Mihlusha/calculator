@@ -78,11 +78,11 @@ func plus(str string) string {
 
 	if num1 <= 10 && num1 >= 1 && num2 <= 10 && num2 >= 1 {
 		result := num1 + num2
-		switch {
-		case isRoman(str1):
+		if isRoman(str1) {
 			return fromIntToRoman(result)
+		} else {
+			return strconv.Itoa(result)
 		}
-		return strconv.Itoa(num1 + num2)
 	} else {
 		panic("формат математической операции не удовлетворяет заданию — " +
 			"операнды от 1 до 10 включительно.")
@@ -121,7 +121,7 @@ func deduction(str string) string {
 		case isRoman(str1):
 			return fromIntToRoman(result)
 		}
-		return strconv.Itoa(num1 + num2)
+		return strconv.Itoa(result)
 	} else {
 		panic("формат математической операции не удовлетворяет заданию — " +
 			"операнды от 1 до 10 включительно.")
@@ -156,7 +156,7 @@ func multiplication(str string) string {
 		case isRoman(str1):
 			return fromIntToRoman(result)
 		}
-		return strconv.Itoa(num1 + num2)
+		return strconv.Itoa(result)
 	} else {
 		panic("формат математической операции не удовлетворяет заданию — " +
 			"операнды от 1 до 10 включительно.")
@@ -187,12 +187,12 @@ func division(str string) string {
 	}
 
 	if num1 <= 10 && num1 >= 1 && num2 <= 10 && num2 >= 1 { // проверка на соответствие условиям
-		result := num1 / num2
+		result := num1 % num2
 		switch {
 		case isRoman(str1):
 			return fromIntToRoman(result)
 		}
-		return strconv.Itoa(num1 + num2)
+		return strconv.Itoa(result)
 	} else {
 		panic("формат математической операции не удовлетворяет заданию — " +
 			"операнды от 1 до 10 включительно.")
